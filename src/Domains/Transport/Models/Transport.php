@@ -3,6 +3,7 @@
 namespace Domains\Transport\Models;
 
 use Domains\Owner\Models\Owner;
+use Domains\Transport\Enums\TransportAvailability;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
