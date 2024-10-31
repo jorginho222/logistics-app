@@ -17,6 +17,6 @@ class TransportCreatePostController
     {
         $creator->create(TransportData::from($request->all()));
 
-        return new Response();
+        return new Response(status: 201);
     }
 }
