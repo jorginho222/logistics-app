@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('owners', function (Blueprint $table) {
-            $table->id();
+            $table->uuid()->primary();
             $table->string('full_name');
             $table->string('work_shift');
             $table->timestamps();

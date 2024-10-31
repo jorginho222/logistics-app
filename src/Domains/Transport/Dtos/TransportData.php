@@ -13,8 +13,21 @@ class TransportData extends Data
         public float                  $temperature,
         public float                  $capacity,
         public ?bool                  $active,
+//        #[Enum(TransportAvailability::class)]
         public ?TransportAvailability $availability
     )
     {
+    }
+
+    public function rules(): array
+    {
+        return [
+            'uuid' => ['required', 'string'],
+            'code' => ['required', 'string'],
+            'temperature' => ['required', 'numeric'],
+            'capacity' => ['required', 'numeric'],
+            'active' => ['nullable', 'boolean'],
+            'availability' => ['nullable', 'string', 'in:' . implode(',', TransportAvailability::cases())],
+        ];
     }
 }

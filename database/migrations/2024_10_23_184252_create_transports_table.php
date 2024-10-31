@@ -13,12 +13,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transports', function (Blueprint $table) {
-            $table->uuid();
+            $table->uuid()->primary();
             $table->string('code');
             $table->float('temperature');
             $table->float('capacity');
             $table->boolean('active')->default(true);
             $table->string('availability')->default(TransportAvailability::AVAILABLE);
+            $table->uuid('owner_id')->nullable();
+
+            $table->foreignId('owner_id')->constrained();
             $table->timestamps();
         });
     }
