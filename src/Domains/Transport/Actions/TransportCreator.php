@@ -7,8 +7,8 @@ use Domains\Transport\Models\Transport;
 
 class TransportCreator
 {
-    public function create(TransportData $transportData)
+    public function create(TransportData $transportData): Transport
     {
-        $transport = Transport::create($transportData->all());
+        return Transport::create($transportData->all());
     }
 }

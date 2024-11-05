@@ -11,12 +11,12 @@ use Illuminate\Http\Response;
 class TransportCreatePostController
 {
     public function __invoke(
-        Request $request,
+        Request          $request,
         TransportCreator $creator
     ): Response
     {
-        $creator->create(TransportData::from($request->all()));
+        $transport = $creator->create(TransportData::from($request->all()));
 
-        return new Response(status: 201);
+        return new Response(content: json_encode($transport), status: 201);
     }
 }

@@ -13,7 +13,7 @@ class TransportData extends Data
         public float                  $temperature,
         public float                  $capacity,
         public ?bool                  $active,
-        public ?TransportAvailability $availability
+        public ?TransportAvailability $availability = TransportAvailability::UNAVAILABLE
     )
     {
     }
